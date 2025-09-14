@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AsidePanelComponent } from './aside-panel-component';
+import { CartComponent } from './cart-component';
 
-describe('AsidePanelComponent', () => {
-  let component: AsidePanelComponent;
-  let fixture: ComponentFixture<AsidePanelComponent>;
+describe('CartService', () => {
+  let component: CartComponent;
+  let fixture: ComponentFixture<CartComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AsidePanelComponent]
+      imports: [CartComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AsidePanelComponent);
+    fixture = TestBed.createComponent(CartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

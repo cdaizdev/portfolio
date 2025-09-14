@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CartService } from '../cart-service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,13 @@ import { CommonModule } from '@angular/common';
   templateUrl: './header.html',
 })
 export class Header {
-  isMobileMenuOpen = false;
+  public isMobileMenuOpen = false;
+  
+  constructor(private cartService: CartService) {}
+
+  openCart() {
+    this.cartService.openCart();
+  }
 
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
