@@ -5,8 +5,7 @@ import { PLATFORM_ID } from '@angular/core';
 @Component({
 	selector: 'app-home',
 	standalone: true,
-	templateUrl: './home.html',
-	styleUrls: ['./home.css']
+	templateUrl: './home.html'
 })
 export class Home {
 	private document = inject(DOCUMENT);

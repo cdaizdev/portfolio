@@ -1,7 +1,7 @@
 // cart-panel.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CartService } from '../cart-service';
+import { CartService } from './cart-service';
 
 @Component({
   selector: 'app-cart-panel',

@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/styles.css --watch",
+    "tail-dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/styles.css --watch",
+    "tail-build": "npx @tailwindcss/cli -i ./src/input.css -o ./src/styles.css --minify",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
