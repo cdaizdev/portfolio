@@ -1,31 +1,40 @@
 <header class="bg-zinc-200 dark:bg-gray-900 shadow-md">
-    <div class="mx-auto max-w-7xl px-4 md:px-12 py-6 flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">CoffeeShop</h1>
-        <button (click)="toggleMobileMenu()" class="md:hidden text-gray-600 dark:text-gray-300 text-2xl focus:outline-none">
-            ☰
-        </button>
-        <nav id="navMenu class="flex gap-4 md: block hidden">
-            <a routerLink="/"
-                class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Inicio</a>
-            <a href="#"
-                class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Productos</a>
-            <a href="#"
-                class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Contacto</a>
-            <button id="main-cart" (click)="openCart()"
-                class="relative text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
-                🛒
-            </button>
-        </nav>
-    </div>
-    <div *ngIf="isMobileMenuOpen" class="md:hidden bg-gray-200 dark:bg-gray-700 p-4">
-        <a routerLink="/"
-            class="block text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Inicio</a>
-        <a href="#"
-            class="block text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Productos</a>
-        <a href="#"
-            class="block text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Contacto</a>
-        <button id="mobile-cart"
-            class="block text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">🛒 Carrito
-        </button>
-    </div>
+  <div class="mx-auto max-w-7xl px-4 md:px-12 py-6 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">CoffeeShop</h1>
+    
+    <!-- Botón menú móvil -->
+    <button 
+      (click)="toggleMobileMenu()" 
+      class="md:hidden text-gray-600 dark:text-gray-300 text-2xl focus:outline-none">
+      ☰
+    </button>
+    
+    <!-- Menú desktop -->
+    <nav id="navMenu" class="hidden md:flex gap-4">
+      <a routerLink="/" 
+         class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Inicio</a>
+      <a href="#"
+         class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Productos</a>
+      <a href="#"
+         class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Contacto</a>
+      <button id="main-cart" (click)="openCart()" 
+         class="relative text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
+        🛒
+      </button>
+    </nav>
+  </div>
+
+  <!-- Menú móvil -->
+  <div *ngIf="isMobileMenuOpen" class="md:hidden bg-gray-200 dark:bg-gray-700 p-4">
+    <a routerLink="/" 
+       class="block text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Inicio</a>
+    <a href="#" 
+       class="block text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Productos</a>
+    <a href="#" 
+       class="block text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Contacto</a>
+    <button id="mobile-cart" 
+       class="block text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
+      🛒 Carrito
+    </button>
+  </div>
 </header>
