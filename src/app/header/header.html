@@ -4,7 +4,7 @@
         <button (click)="toggleMobileMenu()" class="md:hidden text-gray-600 dark:text-gray-300 text-2xl focus:outline-none">
             ☰
         </button>
-        <nav id="navMenu" class="hidden md:flex md:items-center space-x-4">
+        <nav id="navMenu" *ngIf="isMobileMenuOpen" class="md:hidden bg-gray-200 dark:bg-gray-700 p-4">
             <a routerLink="/"
                 class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Inicio</a>
             <a href="#"
