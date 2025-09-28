@@ -1,10 +1,12 @@
 import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
+import { Product } from '../product/product';
 
 @Component({
 	selector: 'app-home',
 	standalone: true,
+	imports: [Product],
 	templateUrl: './home.html'
 })
 export class Home {

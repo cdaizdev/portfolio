@@ -1,1 +1,29 @@
-<p>product works!</p>
+<section class="flex flex-col justify-center items-center min-h-[80vh] px-4 py-32 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-extrabold text-gray-900 dark:text-gray-200 mb-12">Nuestros Productos Más Vendidos</h2>
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-4 w-full">
+        <div *ngFor="let product of products"
+            class="text-zinc-800 dark:text-zinc-200 bg-zinc-200 dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
+            <div class="p-2 flex flex-col h-full">
+                <div class="h-40 w-full overflow-hidden rounded-md bg-gray-200">
+                    <img [src]="product.imageUrl" [alt]="product.name"
+                        class="h-full w-full object-contain object-center group-hover:opacity-75 transition-opacity duration-300">
+                </div>
+                <div class="mt-4 flex-grow">
+                    <h3 class="text-sm text-gray-700 dark:text-gray-300 font-medium">
+                        <a href="#">
+                            <span aria-hidden="true" class=""></span>
+                            {{ product.name }}
+                        </a>
+                    </h3>
+                </div>
+                <div class="mt-4 flex justify-between items-center p-4">
+                    <p class="text-lg font-semibold text-orange-600 dark:text-orange-400">${{ product.price | number:'1.2-2' }}</p>
+                    <button
+                        class="ml-auto bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold py-1 px-3 rounded-full transition-colors duration-200">
+                        Añadir
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

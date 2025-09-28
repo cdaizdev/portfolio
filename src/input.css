@@ -3,3 +3,16 @@
 button {
      cursor: pointer;
 }
+.mobile-menu {
+     @apply md:hidden bg-zinc-200 dark:bg-gray-700 p-0 overflow-hidden;
+     max-height: 0;
+     transition: max-height 0.4s ease-out;
+}
+
+.mobile-menu.visible {
+     max-height: 500px; 
+}
+
+.mobile-menu a, .mobile-menu button {
+    @apply px-4 py-2;
+}
