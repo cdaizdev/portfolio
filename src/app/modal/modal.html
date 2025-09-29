@@ -1,0 +1,46 @@
+<div class="fixed inset-0 bg-black/40 backdrop-blur z-50 flex items-center justify-center" *ngIf="isModalOpen"
+    (click)="closeModalOnOutsideClick($event)">
+    <div id="" class="flex-1 mx-auto max-w-2xl px-4 " tabindex="-1" role="dialog" aria-labelledby="modalTitleId">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl flex flex-col max-h-[80vh]" role="document">
+            <div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
+                <h5 id="modalTitleId" class="text-zinc-800 dark:text-zinc-200">
+                    Aviso Importante sobre Cookies y Privacidad
+                </h5>
+                <button type="button" class="text-gray-400 hover:text-gray-500 transition duration-150"
+                    aria-label="Close" (click)="closeModal()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <div id="modalBody" class="p-6 text-gray-700 dark:text-gray-300 flex-grow overflow-y-auto">
+                <p class="mb-4">
+                    Utilizamos cookies propias y de terceros para analizar nuestros servicios, no recogemos datos con
+                    fines de ofrecerte publicidad. Solo recogemos datos de como usas este sitio.
+                </p>
+                <p class="mb-4">
+                    Puedes aceptar todas las cookies pulsando el botón "Aceptar todas" o configurarlas o rechazar su uso
+                    clicando en "Configuración de cookies".
+                </p>
+                <p class="mb-4">
+                    Asimismo, este es un sitio web de <strong class="font-bold">Mockup</strong> sin ninguna
+                    funcionalidad, usted no podrá usar esta web para enviar datos ni comprar productos.
+                </p>
+                <p class="mb-4">
+                    Para más información, puedes consultar nuestra Política de Cookies y nuestra
+                    <a routerLink="/privacy" class="hover:text-white transition">Política de privacidad</a>
+                </p>
+            </div>
+            <div class="flex justify-between items-center py-6 px-8">
+                <button
+                    class="px-4 py-3 rounded-lg bg-orange-500 hover:bg-orange-600 text-zinc-100 font-bold transition-colors duration-200"
+                    (click)="closeModal()">Aceptar</button>
+                <button
+                    class="px-4 py-3 rounded-lg bg-gray-500 hover:bg-gray-600 text-zinc-100 font-bold transition-colors duration-200"
+                    (click)="closeModal()">Rechazar</button>
+            </div>
+        </div>
+    </div>
+</div>
