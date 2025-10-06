@@ -31,8 +31,7 @@ button {
      @apply bg-orange-500 hover:bg-orange-400 text-white text-sm font-bold transition-colors duration-200;
 }
 
-.card-1 .card_img,
-.card-1 .card_img_hover {
+.card_img, .card_img_hover {
      background-image: url('https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg');
 }
 
@@ -64,23 +63,11 @@ button {
 }
 
 .card .absolute {
-     opacity: 0;
+     opacity: 1;
 }
 
 .card:hover .absolute {
      opacity: 1;
-}
-
-.card__by {
-     font-size: 12px;
-     font-family: 'Raleway', sans-serif;
-     font-weight: 500;
-}
-
-.card__author {
-     font-weight: 600;
-     text-decoration: none;
-     color: #AD7D52;
 }
 
 .card:hover .card_img_hover {
@@ -88,13 +75,9 @@ button {
      opacity: 0.3;
 }
 
-.card:hover .card__info {
+.card:hover {
      background-color: transparent;
      position: relative;
-}
-
-.card:hover .card__info-hover {
-     opacity: 1;
 }
 
 @keyframes typing {
