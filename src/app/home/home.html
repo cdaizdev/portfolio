@@ -1,29 +1,14 @@
 <section class="relative w-full overflow-hidden">
-    <div id="slider" class="absolute inset-0 w-full h-full">
-        <picture data-id="1" class="absolute w-full h-full object-cover opacity-100 transition-opacity duration-1000">
-              <source srcset="images/mobile/slide1_mobile.webp" media="(max-width: 767px)" type="image/webp">
-            <img src="images/desktop/slide1_desktop.webp" alt="Imagen 1" class="w-full h-full object-cover">
-        </picture>
-        <picture data-id="2" class="absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000">
-              <source srcset="images/mobile/slide2_mobile.webp" media="(max-width: 767px)" type="image/webp">
-            <img src="images/desktop/slide2_desktop.webp" alt="Imagen 2" class="w-full h-full object-cover">
-        </picture>
-        <picture data-id="3" class="absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000">
-              <source srcset="images/mobile/slide3_mobile.webp" media="(max-width: 767px)" type="image/webp">
-            <img src="images/desktop/slide3_desktop.webp" alt="Imagen 3" class="w-full h-full object-cover">
-        </picture>
-    </div>
     <div class="absolute inset-0 bg-black/50 z-10"></div>
     <div class="relative z-20 flex items-center justify-center h-full text-center px-4 min-h-[80vh]">
-        <div>
-            <h1 class="text-white text-4xl md:text-6xl font-bold mb-4">Bienvenido a CoffeeShop</h1>
-            <p class="text-white text-lg md:text-xl">Descubre productos increíbles para crea tu cafetería de ensueño</p>
+        <div class="block">
+            <div class="text-typing text-white text-4xl font-bold uppercase mb-8">
+                <h1 class="text-white text-4xl md:text-6xl font-bold mb-4">Bienvenido a mi web</h1>
+            </div>
+            <button class="btn btn-primary">Explora mis proyectos</button>
         </div>
     </div>
 </section>
 <section class="flex flex-col justify-center items-center min-h-[80vh] px-8">
     <h2 class="text-4xl text-orange-600">Lo estamos preparando todo...</h2>
-</section>
-<section class="block px-8 bg-gray-800">
-    <app-product></app-product>
 </section>

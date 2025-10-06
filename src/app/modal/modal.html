@@ -3,9 +3,7 @@
     <div id="" class="flex-1 mx-auto max-w-2xl px-4 " tabindex="-1" role="dialog" aria-labelledby="modalTitleId">
         <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl flex flex-col max-h-[80vh]" role="document">
             <div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
-                <h5 id="modalTitleId" class="text-zinc-800 dark:text-zinc-200">
-                    Aviso Importante sobre Cookies y Privacidad
-                </h5>
+                <h2 class="text-xl text-gray-800 dark:text-gray-200 font-bold mb-4">Política de Privacidad y Cookies</h2>
                 <button type="button" class="text-gray-400 hover:text-gray-500 transition duration-150"
                     aria-label="Close" (click)="closeModal()">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -16,22 +14,21 @@
                 </button>
             </div>
             <div id="modalBody" class="p-6 text-gray-700 dark:text-gray-300 flex-grow overflow-y-auto">
-                <p class="mb-4">
-                    Utilizamos cookies propias y de terceros para analizar nuestros servicios, no recogemos datos con
-                    fines de ofrecerte publicidad. Solo recogemos datos de como usas este sitio.
-                </p>
-                <p class="mb-4">
-                    Puedes aceptar todas las cookies pulsando el botón "Aceptar todas" o configurarlas o rechazar su uso
-                    clicando en "Configuración de cookies".
-                </p>
-                <p class="mb-4">
-                    Asimismo, este es un sitio web de <strong class="font-bold">Mockup</strong> sin ninguna
-                    funcionalidad, usted no podrá usar esta web para enviar datos ni comprar productos.
-                </p>
-                <p class="mb-4">
-                    Para más información, puedes consultar nuestra Política de Cookies y nuestra
-                    <a routerLink="/privacy" class="hover:text-white transition">Política de privacidad</a>
-                </p>
+                    <p class="mb-2">
+                        Esta web no recoge datos personales ni utiliza cookies de ningún tipo en este momento.
+                    </p>
+                    <p class="mb-2">
+                        En el futuro, es posible que se utilicen cookies estrictamente necesarias para el funcionamiento
+                        básico del sitio, como recordar preferencias o mejorar la experiencia de navegación.
+                    </p>
+                    <p class="mb-2">
+                        No se utilizarán cookies con fines publicitarios ni para rastrear la actividad del usuario sin
+                        su consentimiento explícito.
+                    </p>
+                    <p>
+                        Al continuar navegando, aceptas esta política. Cualquier cambio será comunicado de forma clara y
+                        accesible.
+                    </p>
             </div>
             <div class="flex justify-between items-center py-6 px-8">
                 <button

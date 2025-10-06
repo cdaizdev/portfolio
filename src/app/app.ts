@@ -2,12 +2,12 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './header/header';
 import { Footer } from './footer/footer';
-import { CartComponent } from './cart/cart-component';
-import { Maintenance } from './maintenance/maintenance';
+import { Home } from './home/home';
+import { Modal } from './modal/modal';
 
 @Component({
   selector: 'app-root',
-  imports: [Maintenance],
+  imports: [RouterOutlet, Header, Footer, Home, Modal],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
