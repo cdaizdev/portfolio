@@ -31,6 +31,72 @@ button {
      @apply bg-orange-500 hover:bg-orange-400 text-white text-sm font-bold transition-colors duration-200;
 }
 
+.card-1 .card_img,
+.card-1 .card_img_hover {
+     background-image: url('https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg');
+}
+
+.card_img_hover {
+     transition: 0.2s all ease-out;
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     width: 100%;
+     position: absolute;
+     height: 235px;
+     border-top-left-radius: 12px;
+     border-top-right-radius: 12px;
+     top: 0;
+}
+
+.card {
+     transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+     background-color: #fff;
+     position: relative;
+     border-radius: 12px;
+     overflow: hidden;
+     box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+     box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+     transform: scale(1.10, 1.10);
+}
+
+.card .absolute {
+     opacity: 0;
+}
+
+.card:hover .absolute {
+     opacity: 1;
+}
+
+.card__by {
+     font-size: 12px;
+     font-family: 'Raleway', sans-serif;
+     font-weight: 500;
+}
+
+.card__author {
+     font-weight: 600;
+     text-decoration: none;
+     color: #AD7D52;
+}
+
+.card:hover .card_img_hover {
+     height: 100%;
+     opacity: 0.3;
+}
+
+.card:hover .card__info {
+     background-color: transparent;
+     position: relative;
+}
+
+.card:hover .card__info-hover {
+     opacity: 1;
+}
+
 @keyframes typing {
      from {
           width: 0

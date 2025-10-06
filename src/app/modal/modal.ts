@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-modal',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './modal.html',
   styleUrl: './modal.css'
 })
