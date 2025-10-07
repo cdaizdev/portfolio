@@ -1,0 +1,44 @@
+.card {
+    transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+    background-color: #fff;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+    min-height: 100%;
+}
+
+.card:hover {
+    box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+}
+
+.card .absolute {
+    opacity: 1;
+}
+
+.card:hover .absolute {
+    opacity: 1;
+}
+
+.card:hover .card_img_hover {
+    height: 100%;
+    opacity: 0.3;
+}
+
+.card:hover {
+    background-color: transparent;
+    position: relative;
+}
+
+.card_img_hover {
+    transition: 0.2s all ease-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    position: absolute;
+    height: 235px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    top: 0;
+}

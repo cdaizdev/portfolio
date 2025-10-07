@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './card.css'
 })
 export class Card {
+  @Input() data: any;
   isLiked: boolean = false;
 
   likeColor: string = '#db8310ff';

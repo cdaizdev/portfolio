@@ -8,7 +8,6 @@ import { Modal } from './modal/modal';
   selector: 'app-root',
   imports: [RouterOutlet, Header, Footer, Modal],
   templateUrl: './app.html',
-  styleUrl: './app.css'
 })
 export class App {
   protected readonly title = signal('portfolio');
