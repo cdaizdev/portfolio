@@ -12,8 +12,37 @@ export class Modal implements OnInit {
 
   constructor() { }
 
+  getCookie(name: string) {
+    const cookies = document.cookie.split("; ");
+    for (let cookie of cookies) {
+      const [key, value] = cookie.split("=");
+      if (key === name) {
+        return value;
+      }
+    }
+    return null;
+  }
+
+  setCookie(name: string, value: string) {
+    const now = new Date();
+    now.setTime(now.getTime() + (60 * 60 * 1000));
+
+    const expires = "expires=" + now.toUTCString();
+
+    document.cookie = `${name}=${value}; ${expires}; path=/; SameSite=Lax`;
+  }
+
   ngOnInit(): void {
-    this.openModal();
+    if(!this.getCookie('accept_cookies'))
+      this.openModal();
+  }
+
+  /**
+   * Método para abrir el modal.
+   */
+  accept(): void {
+    this.setCookie(`accept_cookies`, `true`);
+    this.closeModal();
   }
 
   /**
