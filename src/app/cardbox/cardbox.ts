@@ -6,12 +6,12 @@ import { NgModule, Component, Input } from '@angular/core';
   imports: [CommonModule],
   templateUrl: './cardbox.html'
 })
-export class TarjetaComponent {
+export class CardBox {
   @Input() titulo: string = 'Título por defecto';
   @Input() contenido: string = 'Contenido de la tarjeta';
-  @Input() colorBorde: string = 'green-400';
+  @Input() borderColor: string = '';
 
   get borderStyle(): string {
-    return `border-l-4 border-${this.colorBorde}`;
+    return `border-l-4 ${this.borderColor}`;
   }
 }

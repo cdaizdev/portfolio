@@ -1,55 +1,59 @@
 <header class="bg-zinc-200 dark:bg-gray-900 shadow-md">
-   <div class="mx-auto max-w-7xl px-4 md:px-12 py-6 flex justify-between items-center">
-      <div>
-         <h1 class="text-2xl font-bold text-orange-600 dark:text-orange-400">
-            <span>Portfolio</span>
-         </h1>
-         <h2><small class="text-zinc-300 text-xs">Built with Angular</small></h2>
-      </div>
-      <button (click)="toggleMobileMenu()"
-         class="md:hidden text-gray-600 dark:text-gray-300 text-2xl focus:outline-none">
-         <span *ngIf="!isMobileMenuOpen">☰</span>
-         <span *ngIf="isMobileMenuOpen">✖</span>
-      </button>
+  <div class="mx-auto max-w-7xl px-4 md:px-12 py-6 flex justify-between items-center">
+    <div>
+      <h1 class="text-2xl font-bold text-orange-600 dark:text-orange-400">
+        <span>Portfolio</span>
+      </h1>
+      <h2><small class="text-zinc-300 text-xs">Built with Angular</small></h2>
+    </div>
+    <button (click)="toggleMobileMenu()"
+      class="md:hidden text-gray-600 dark:text-gray-300 text-2xl focus:outline-none">
+      @if (!isMobileMenuOpen) {
+        <span>☰</span>
+      }
+      @if (isMobileMenuOpen) {
+        <span>✖</span>
+      }
+    </button>
 
-      <nav id="navMenu" class="hidden md:flex gap-6">
-         <a routerLink="/"
-            class="text-gray-200 font-medium relative inline-block pb-1 group no-underline hover:text-orange-300 transition duration-300">
-            Inicio
-            <span
-               class="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
-         </a>
-         <a href="#"
-            class="text-gray-200 font-medium relative inline-block pb-1 group no-underline hover:text-orange-300 transition duration-300">
-            Acerca de
-            <span
-               class="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
-         </a>
-         <a href="#"
-            class="text-gray-200 font-medium relative inline-block pb-1 group no-underline hover:text-orange-300 transition duration-300">
-            Contacto
-            <span
-               class="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
-         </a>
-         <!-- button id="main-cart" (click)="openCart()"
-            class="hidden nav-item text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 z-20">
-            🛒
-         </button-->
-      </nav>
-   </div>
+    <nav id="navMenu" class="hidden md:flex gap-6">
+      <a routerLink="/"
+        class="text-gray-200 font-medium relative inline-block pb-1 group no-underline hover:text-orange-300 transition duration-300">
+        Inicio
+        <span
+        class="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
+      </a>
+      <a href="#"
+        class="text-gray-200 font-medium relative inline-block pb-1 group no-underline hover:text-orange-300 transition duration-300">
+        Acerca de
+        <span
+        class="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
+      </a>
+      <a href="#"
+        class="text-gray-200 font-medium relative inline-block pb-1 group no-underline hover:text-orange-300 transition duration-300">
+        Contacto
+        <span
+        class="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
+      </a>
+      <!-- button id="main-cart" (click)="openCart()"
+      class="hidden nav-item text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 z-20">
+      🛒
+    </button-->
+  </nav>
+</div>
 
-   <div class="mobile-menu" [ngClass]="{'visible': isMobileMenuOpen}">
-      <a routerLink="/" (click)="toggleMobileMenu()"
-         class="block nav-item text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 p-2">Inicio</a>
-      <a href="#" (click)="toggleMobileMenu()"
-         class="block nav-item text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 p-2">Acerca
-         de</a>
-      <a href="#" (click)="toggleMobileMenu()"
-         class="block nav-item text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 p-2">Contacto</a>
-      <!-- button id="mobile-cart" (click)="openCart(); toggleMobileMenu();"
-         class="block text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 p-2">
-         🛒 Carrito
-      </button -->
-   </div>
+<div class="mobile-menu" [ngClass]="{'visible': isMobileMenuOpen}">
+  <a routerLink="/" (click)="toggleMobileMenu()"
+  class="block nav-item text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 p-2">Inicio</a>
+  <a href="#" (click)="toggleMobileMenu()"
+    class="block nav-item text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 p-2">Acerca
+  de</a>
+  <a href="#" (click)="toggleMobileMenu()"
+  class="block nav-item text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 p-2">Contacto</a>
+  <!-- button id="mobile-cart" (click)="openCart(); toggleMobileMenu();"
+  class="block text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 p-2">
+  🛒 Carrito
+  </button -->
+</div>
 
 </header>

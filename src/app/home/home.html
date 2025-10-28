@@ -1,43 +1,45 @@
 <section class="relative w-full overflow-hidden bg-gradient">
-    <div class="absolute inset-0 bg-black/50 z-10"></div>
-    <div class="relative z-20 flex flex-col items-center justify-center h-full text-center px-4 min-h-[80vh]">
-        <div class="text-typing text-white text-4xl font-bold uppercase mb-8">
-            <h2 class="text-white text-4xl md:text-6xl font-bold mb-4">Bienvenido <span
-                    class="md:block hidden text-orange-400">a mi web</span></h2>
-        </div>
-        <a href="#projects" class="btn btn-primary">Explora mis proyectos</a>
+  <div class="absolute inset-0 bg-black/50 z-10"></div>
+  <div class="relative z-20 flex flex-col items-center justify-center h-full text-center px-4 min-h-[80vh]">
+    <div class="text-typing text-white text-4xl font-bold uppercase mb-8">
+      <h2 class="text-white text-4xl md:text-6xl font-bold mb-4">Bienvenido <span
+      class="md:block hidden text-orange-400">a mi web</span></h2>
     </div>
+    <a href="#projects" class="btn btn-primary">Explora mis proyectos</a>
+  </div>
 </section>
 <section class="flex items-center min-h-[80vh] md:px-12 px-8">
-    <div class="grid md:grid-cols-2 grid-cols-1 my-12">
-        <div class="p-4">
-            <h2 class="text-4xl text-orange-600">Acerca de mí</h2>
-            <p class="py-6 text-gray-700 text-justify">
-                Apasionado por la creación de experiencias digitales intuitivas, funcionales y visualmente atractivas.
-                Con sólida experiencia en desarrollo frontend y backend, domino tecnologías como HTML, CSS, JavaScript,
-                Angular, React, y bases de datos SQL/NoSQL. Me especializo en construir interfaces responsivas,
-                optimizar el rendimiento de aplicaciones web y colaborar en equipos ágiles para entregar soluciones
-                escalables y centradas en el usuario.
-            </p>
-            <p class="py-6 text-gray-700 text-justify">
-                Siempre en búsqueda de nuevos retos, me mantengo actualizado con las últimas tendencias del desarrollo
-                web, buenas prácticas de accesibilidad, seguridad y diseño UX/UI. Mi enfoque combina creatividad,
-                precisión técnica y compromiso con la calidad.
-            </p>
-        </div>
-        <div class="p-4">
-            <div class="p-8">
-                <img class="rounded-lg" src="images/desktop/dummy_desktop.webp" alt="">
-            </div>
-        </div>
+  <div class="grid md:grid-cols-2 grid-cols-1 my-12">
+    <div class="p-4">
+      <h2 class="text-4xl text-orange-600">Acerca de mí</h2>
+      <p class="py-6 text-gray-700 text-justify">
+        Apasionado por la creación de experiencias digitales intuitivas, funcionales y visualmente atractivas.
+        Con sólida experiencia en desarrollo frontend y backend, domino tecnologías como HTML, CSS, JavaScript,
+        Angular, React, y bases de datos SQL/NoSQL. Me especializo en construir interfaces responsivas,
+        optimizar el rendimiento de aplicaciones web y colaborar en equipos ágiles para entregar soluciones
+        escalables y centradas en el usuario.
+      </p>
+      <p class="py-6 text-gray-700 text-justify">
+        Siempre en búsqueda de nuevos retos, me mantengo actualizado con las últimas tendencias del desarrollo
+        web, buenas prácticas de accesibilidad, seguridad y diseño UX/UI. Mi enfoque combina creatividad,
+        precisión técnica y compromiso con la calidad.
+      </p>
     </div>
+    <div class="p-4">
+      <div class="p-8">
+        <img class="rounded-lg" src="images/desktop/dummy_desktop.webp" alt="">
+      </div>
+    </div>
+  </div>
 </section>
 <section id="projects"
-    class="flex flex-col gap-12 justify-center items-center min-h-screen md:px-32 px-4 bg-gray-200 py-18">
-    <h2 class="text-4xl text-orange-600">Proyectos</h2>
-    <div class="grid md:grid-cols-4 grid-cols-1 gap-6 w-full">
-        <ng-container @if="cards?.length">
-            <app-card *ngFor="let card of cards" [data]="card"></app-card>
-        </ng-container>
-    </div>
+  class="flex flex-col gap-12 justify-center items-center min-h-screen md:px-32 px-4 bg-gray-200 py-18">
+  <h2 class="text-4xl text-orange-600">Proyectos</h2>
+  <div class="grid md:grid-cols-4 grid-cols-1 gap-6 w-full">
+    <ng-container if="cards?.length">
+      @for (card of cards; track card) {
+        <app-card [data]="card"></app-card>
+      }
+    </ng-container>
+  </div>
 </section>

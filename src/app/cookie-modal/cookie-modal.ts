@@ -12,12 +12,10 @@ export class CookieModal {
   constructor() { }
 
   accept() {
-    alert("Has aceptado las cookies");
     this.acceptEmmiter.emit();
   }
 
   reject() {
-    alert("Has rechazado las cookies");
     this.rejectEmmiter.emit();
   }
 
