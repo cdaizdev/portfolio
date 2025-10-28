@@ -36,7 +36,7 @@
     class="flex flex-col gap-12 justify-center items-center min-h-screen md:px-32 px-4 bg-gray-200 py-18">
     <h2 class="text-4xl text-orange-600">Proyectos</h2>
     <div class="grid md:grid-cols-4 grid-cols-1 gap-6 w-full">
-        <ng-container *ngIf="cards?.length">
+        <ng-container @if="cards?.length">
             <app-card *ngFor="let card of cards" [data]="card"></app-card>
         </ng-container>
     </div>
