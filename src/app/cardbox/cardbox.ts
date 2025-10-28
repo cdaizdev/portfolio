@@ -7,8 +7,10 @@ import { NgModule, Component, Input } from '@angular/core';
   templateUrl: './cardbox.html'
 })
 export class CardBox {
-  @Input() titulo: string = 'Título por defecto';
-  @Input() contenido: string = 'Contenido de la tarjeta';
+  @Input() title: string = 'Nombre del usuario';
+  @Input() position: string = 'Puesto de trabajo';
+  @Input() contactDate: string = '10/12/2025';
+  @Input() description: string = '10/12/2025';
   @Input() borderColor: string = '';
 
   get borderStyle(): string {
