@@ -48,3 +48,63 @@
         </div>
     </section>
 </div>
+<div class="bg-gray-900 text-white flex flex-col items-center justify-center h-screen">
+  <h1 class="text-3xl font-bold mb-8"> Sonómetro con JavaScript
+</h1>
+  
+  <div class="w-64 bg-gray-700 rounded-full h-6 overflow-hidden">
+    <div id="bar" class="bg-green-500 h-6 w-0 transition-all duration-300"></div>
+  </div>
+  <p id="level" class="mt-4 text-lg">Nivel medio: 0 dB</p>
+
+  <script>
+    async function init() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const audioCtx = new AudioContext();
+        const source = audioCtx.createMediaStreamSource(stream);
+        const analyser = audioCtx.createAnalyser();
+        analyser.fftSize = 256;
+        const dataArray = new Uint8Array(analyser.frequencyBinCount);
+        source.connect(analyser);
+
+        const bar = document.getElementById("bar");
+        const levelText = document.getElementById("level");
+
+        let samples = [];
+        
+        function getInstantDB() {
+          analyser.getByteTimeDomainData(dataArray);
+          let sum = 0;
+          for (let i = 0; i < dataArray.length; i++) {
+            const val = (dataArray[i] - 128) / 128;
+            sum += val * val;
+          }
+          const rms = Math.sqrt(sum / dataArray.length);
+          return Math.min(100, (rms * 1000).toFixed(1));
+        }
+
+        // Toma muestras cada 100 ms
+        setInterval(() => {
+          samples.push(getInstantDB());
+        }, 100);
+
+        // Calcula la media cada segundo
+        setInterval(() => {
+          if (samples.length === 0) return;
+          const avg = samples.reduce((a, b) => a + parseFloat(b), 0) / samples.length;
+          samples = [];
+          bar.style.width = `${avg}%`;
+          bar.style.backgroundColor = avg > 70 ? '#ef4444' : avg > 40 ? '#facc15' : '#22c55e';
+          levelText.textContent = `Nivel medio: ${avg.toFixed(1)} dB`;
+        }, 1000);
+
+      } catch (err) {
+        alert("Error: no se pudo acceder al micrófono");
+        console.error(err);
+      }
+    }
+
+    init();
+  </script>
+</div>
