@@ -4,7 +4,7 @@ import { Soundmeter } from '../soundmeter/soundmeter';
 
 @Component({
   selector: 'app-manager',
-  imports: [CardBox, Soundmeter],
+  imports: [CardBox],
   standalone: true,
   templateUrl: './manager.html'
 })
