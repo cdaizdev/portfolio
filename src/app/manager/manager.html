@@ -1,112 +1,53 @@
- <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 
 <div class="py-12 md:mx-12 mx-4">
-    <section class="mb-4">
-        <h1 class="font-bold text-xl">App de prueba</h1>
-        <p>La app debe funcionar en el lado de cliente y la base de datos se almacenará en el dispositivo del cliente,
-            como un json o un csv.</p>
-    </section>
-    <section class="border rounded p-4 mb-4">
-        <form action="#" method="get">
-            <div class="grid md:grid-cols-4 grid-cols-1 gap-4 mb-4">
-                <div>
-                    <label for="full_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                        Nombre completo
-                    </label>
-                    <input type="text" id="full_name"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="John Connor" required />
-                </div>
-                <div class="col-span-3 row-span-2">
-                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                        Observaciones
-                    </label>
-                    <textarea id="message" rows="4"
-                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Tiene los ojos rojos todo el día, él asegura que es de la pasta de soldar..."></textarea>
-                </div>
-                <div>
-                    <label for="job_position" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                        Puesto de trabajo
-                    </label>
-                    <input type="text" id="job_position"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Reparador de teléfonos móviles" required />
-                </div>
-            </div>
-            <button class="btn btn-primary" type="submit">Guardar</button>
-        </form>
-    </section>
-    <section class="border rounded p-4">
-        <div class="flex flex-col gap-4">
-            <app-cardbox title="Arnold Schwarzenegger" position="Patrón" borderColor="border-green-500"
-                contactDate="14/10/2136"
-                description="Quejarse de que nadie quiere trabajar, pedir subvenciones al cabildo"></app-cardbox>
-            <app-cardbox title="Linda Hamilton" position="Administrativa de recursos humanos"
-                borderColor="border-red-500" contactDate="15/10/2136"
-                description="Termina de trabajar a las 15:30, no llamar ni escribir después de esa hora o te envía al patrón."></app-cardbox>
-            <app-cardbox title="Edward Furlong" position="Operario de platanera" borderColor="border-blue-500"
-                contactDate="16/10/2136" description="Cargar piñas de plátanos"></app-cardbox>
-        </div>
-    </section>
+	<section class="mb-4">
+		<h1 class="font-bold text-xl">App de prueba</h1>
+		<p>La app debe funcionar en el lado de cliente y la base de datos se almacenará en el dispositivo del cliente,
+			como un json o un csv.</p>
+	</section>
+	<section class="border rounded p-4 mb-4">
+		<form action="#" method="get">
+			<div class="grid md:grid-cols-4 grid-cols-1 gap-4 mb-4">
+				<div>
+					<label for="full_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+						Nombre completo
+					</label>
+					<input type="text" id="full_name"
+						class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+						placeholder="John Connor" required />
+				</div>
+				<div class="col-span-3 row-span-2">
+					<label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+						Observaciones
+					</label>
+					<textarea id="message" rows="4"
+						class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+						placeholder="Tiene los ojos rojos todo el día, él asegura que es de la pasta de soldar..."></textarea>
+				</div>
+				<div>
+					<label for="job_position" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+						Puesto de trabajo
+					</label>
+					<input type="text" id="job_position"
+						class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+						placeholder="Reparador de teléfonos móviles" required />
+				</div>
+			</div>
+			<button class="btn btn-primary" type="submit">Guardar</button>
+		</form>
+	</section>
+	<section class="border rounded p-4">
+		<div class="flex flex-col gap-4">
+			<app-cardbox title="Arnold Schwarzenegger" position="Patrón" borderColor="border-green-500"
+				contactDate="14/10/2136"
+				description="Quejarse de que nadie quiere trabajar, pedir subvenciones al cabildo"></app-cardbox>
+			<app-cardbox title="Linda Hamilton" position="Administrativa de recursos humanos"
+				borderColor="border-red-500" contactDate="15/10/2136"
+				description="Termina de trabajar a las 15:30, no llamar ni escribir después de esa hora o te envía al patrón."></app-cardbox>
+			<app-cardbox title="Edward Furlong" position="Operario de platanera" borderColor="border-blue-500"
+				contactDate="16/10/2136" description="Cargar piñas de plátanos"></app-cardbox>
+		</div>
+	</section>
 </div>
-<div class="bg-gray-900 text-white flex flex-col items-center justify-center h-screen">
-  <h1 class="text-3xl font-bold mb-8"> Sonómetro con JavaScript
-</h1>
-  
-  <div class="w-64 bg-gray-700 rounded-full h-6 overflow-hidden">
-    <div id="bar" class="bg-green-500 h-6 w-0 transition-all duration-300"></div>
-  </div>
-  <p id="level" class="mt-4 text-lg">Nivel medio: 0 dB</p>
-
-  <script>
-    async function init() {
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        const audioCtx = new AudioContext();
-        const source = audioCtx.createMediaStreamSource(stream);
-        const analyser = audioCtx.createAnalyser();
-        analyser.fftSize = 256;
-        const dataArray = new Uint8Array(analyser.frequencyBinCount);
-        source.connect(analyser);
-
-        const bar = document.getElementById("bar");
-        const levelText = document.getElementById("level");
-
-        let samples = [];
-        
-        function getInstantDB() {
-          analyser.getByteTimeDomainData(dataArray);
-          let sum = 0;
-          for (let i = 0; i < dataArray.length; i++) {
-            const val = (dataArray[i] - 128) / 128;
-            sum += val * val;
-          }
-          const rms = Math.sqrt(sum / dataArray.length);
-          return Math.min(100, (rms * 1000).toFixed(1));
-        }
-
-        // Toma muestras cada 100 ms
-        setInterval(() => {
-          samples.push(getInstantDB());
-        }, 100);
-
-        // Calcula la media cada segundo
-        setInterval(() => {
-          if (samples.length === 0) return;
-          const avg = samples.reduce((a, b) => a + parseFloat(b), 0) / samples.length;
-          samples = [];
-          bar.style.width = `${avg}%`;
-          bar.style.backgroundColor = avg > 70 ? '#ef4444' : avg > 40 ? '#facc15' : '#22c55e';
-          levelText.textContent = `Nivel medio: ${avg.toFixed(1)} dB`;
-        }, 1000);
-
-      } catch (err) {
-        alert("Error: no se pudo acceder al micrófono");
-        console.error(err);
-      }
-    }
-
-    init();
-  </script>
-</div>
+<app-soundmeter></app-soundmeter>
