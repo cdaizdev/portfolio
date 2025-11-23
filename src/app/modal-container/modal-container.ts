@@ -8,7 +8,15 @@ import { CookieModal } from '../cookie-modal/cookie-modal';
   templateUrl: './modal-container.html'
 })
 export class ModalContainer {
-  modal = true;
+  modal = false;
+  
+  constructor() {
+    const alreadyShown = localStorage.getItem('modalShown');
+    if (!alreadyShown) {
+      this.openModal();
+      localStorage.setItem('modalShown', 'true');
+    }
+  }
 
   openModal() {
     this.modal = true;

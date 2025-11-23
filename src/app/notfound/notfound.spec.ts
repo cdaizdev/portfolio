@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Soundmeter } from './soundmeter';
+import { Notfound } from './notfound';
 
-describe('Soundmeter', () => {
-  let component: Soundmeter;
-  let fixture: ComponentFixture<Soundmeter>;
+describe('Notfound', () => {
+  let component: Notfound;
+  let fixture: ComponentFixture<Notfound>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Soundmeter]
+      imports: [Notfound]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Soundmeter);
+    fixture = TestBed.createComponent(Notfound);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
