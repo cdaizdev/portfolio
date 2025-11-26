@@ -22,7 +22,9 @@
       </div>
     </div>
     <div class="invisible bg-cover bg-center bg-no-repeat w-full h-[235px] rounded-tl-[12px] rounded-tr-[12px]"></div>
-    <a routerLink="{{ data.route }}" class="card_link">
+    <a *ngIf="data.route" [routerLink]="data.route" class="card_link"></a>
+
+<a *ngIf="data.src" [attr.href]="data.src" class="card_link"></a>
       <div class="card_img_hover" style="background-image: url('{{ data.image }}')"></div>
     </a>
     <div class="z-1 rounded p-6 bg-white">
