@@ -21,12 +21,34 @@
         </svg><span class="text-sm text-orange-400 align-middle ml-1">{{ data.time }}</span>
       </div>
     </div>
-    <div class="invisible bg-cover bg-center bg-no-repeat w-full h-[235px] rounded-tl-[12px] rounded-tr-[12px]"></div>
-    <a *ngIf="data.route" [routerLink]="data.route" class="card_link"></a>
+    <ng-container *ngIf="data.route; else externalLink">
+  <a [routerLink]="data.route" class="card_link">
+    <div 
+      class="invisible bg-cover bg-center bg-no-repeat w-full h-[235px] rounded-tl-[12px] rounded-tr-[12px]">
+    </div>
+    <div class="card_img_hover" [style.background-image]="'url(' + data.image + ')'"></div>
+  </a>
+</ng-container>
 
-<a *ngIf="data.src" [attr.href]="data.src" class="card_link"></a>
-      <div class="card_img_hover" style="background-image: url('{{ data.image }}')"></div>
+<ng-template #externalLink>
+  <ng-container *ngIf="data.src; else noLink">
+    <a [attr.href]="data.src" target="_blank" class="card_link">
+      <div 
+        class="invisible bg-cover bg-center bg-no-repeat w-full h-[235px] rounded-tl-[12px] rounded-tr-[12px]">
+      </div>
+      <div class="card_img_hover" [style.background-image]="'url(' + data.image + ')'"></div>
     </a>
+  </ng-container>
+</ng-template>
+
+<ng-template #noLink>
+  <div class="card_link">
+    <div 
+      class="invisible bg-cover bg-center bg-no-repeat w-full h-[235px] rounded-tl-[12px] rounded-tr-[12px]">
+    </div>
+    <div class="card_img_hover" [style.background-image]="'url(' + data.image + ')'"></div>
+  </div>
+</ng-template>
     <div class="z-1 rounded p-6 bg-white">
       <h3 class="uppercase text-[13px] tracking-[2px] font-medium text-gray-600 mb-4">{{ data.title }}</h3>
       <p class="mb-4">{{ data.description }}</p>
