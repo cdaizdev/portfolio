@@ -14,11 +14,8 @@ export class Home {
 	private platformId = inject(PLATFORM_ID);
 
 	cards = [
-		{ title: 'Ciberseguridad', description: 'Configuración básica de seguridad de un servidor en Linux.', image: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg', time: '20min'},
 		{ title: 'Desarrollo Full Stack', description: 'Video creación de una web en Laravel', image: 'https://images.pexels.com/photos/574069/pexels-photo-574069.jpeg', time: '4min' },
-		{ title: 'Web en Wordpress', description: 'Visita mi web en Wordpress.', image: 'https://upload.wikimedia.org/wikipedia/commons/d/db/Official_WordPress_Logo.png', time: '0min', src:'https://sruveyshop.wordpress.com/' },
-		{ title: 'Web en Webflow', description: '¡Visita mi web en Webflow!', image: 'images/desktop/webflow.png', time: '0min', src: 'https://itcan.webflow.io/'},
-		{ title: 'App en Angular', route: '/app', description: 'En desarrollo', image: '', time:'infinity' }
+		{ title: 'Blog', route: '/blog', description: 'En desarrollo', image: '', time:'infinity' }
 	];
 
 	constructor() {
