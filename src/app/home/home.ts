@@ -6,7 +6,7 @@ import { Card } from '../card/card';
 @Component({
 	selector: 'app-home',
 	standalone: true,
-	imports: [Card],
+	imports: [],
 	templateUrl: './home.html'
 })
 export class Home {
