@@ -9,8 +9,9 @@ export const appConfig: ApplicationConfig = {
     provideZonelessChangeDetection(),
     provideRouter(
       routes, 
-      withInMemoryScrolling({ 
-        scrollPositionRestoration: 'enabled' 
+      withInMemoryScrolling({
+        scrollPositionRestoration: 'enabled',
+        anchorScrolling: 'enabled',
       }))
   ]
 };
