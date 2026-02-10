@@ -29,9 +29,9 @@
         <span
         class="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
       </a>
-      <a href="#"
+      <a href="#blog"
         class="text-gray-200 font-medium relative inline-block pb-1 group no-underline hover:text-orange-300 transition duration-300">
-        Contacto
+        Blog
         <span
         class="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
       </a>
@@ -41,12 +41,12 @@
 <div class="mobile-menu" [ngClass]="{'visible': isMobileMenuOpen}">
   <a routerLink="/" (click)="toggleMobileMenu()"
   class="block nav-item text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 p-2">Inicio</a>
-  <a href="#" (click)="toggleMobileMenu()"
+  <a href="#about" (click)="toggleMobileMenu()"
     class="block nav-item text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 p-2">
     Acerca de
   </a>
-  <a href="#" (click)="toggleMobileMenu()"
-  class="block nav-item text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 p-2">Contacto</a>
+  <a href="#blog" (click)="toggleMobileMenu()"
+  class="block nav-item text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 p-2">Blog</a>
 </div>
 
 </header>

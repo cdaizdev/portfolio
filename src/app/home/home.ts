@@ -1,12 +1,12 @@
 import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
-import { Card } from '../card/card';
+import { RouterLink } from '@angular/router';
 
 @Component({
 	selector: 'app-home',
 	standalone: true,
-	imports: [],
+	imports: [RouterLink],
 	templateUrl: './home.html'
 })
 export class Home {
@@ -14,7 +14,6 @@ export class Home {
 	private platformId = inject(PLATFORM_ID);
 
 	cards = [
-		{ title: 'Desarrollo Full Stack', description: 'Video creación de una web en Laravel', image: 'https://images.pexels.com/photos/574069/pexels-photo-574069.jpeg', time: '4min' },
 		{ title: 'Blog', route: '/blog', description: 'En desarrollo', image: '', time:'infinity' }
 	];
 

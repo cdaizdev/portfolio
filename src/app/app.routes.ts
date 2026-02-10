@@ -7,6 +7,6 @@ import { Notfound } from './notfound/notfound';
 export const routes: Routes = [
     { path: '', component: Home },
     { path: 'privacy', component: Privacy },
-    { path: 'blog', component: Blog },
+    { path: 'blog/use_hyperv_in_environment', component: Blog },
     { path: '**', component: Notfound }
 ];
