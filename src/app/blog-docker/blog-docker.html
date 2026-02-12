@@ -1,0 +1,66 @@
+<main class="min-h-screen">
+  <section class="max-w-3xl mx-auto px-6 py-20">
+    <article>
+      <header class="mb-12">
+        <span class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-widest text-blue-600 uppercase bg-blue-100 rounded-full">
+          DevOps & Contenedores
+        </span>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-6">
+          Docker y Kubernetes: Del Contenedor a la Orquestación Escalable
+        </h1>
+        <div class="flex items-center gap-4 text-slate-500 text-sm">
+          <span class="w-10 h-10 rounded-full bg-orange-400 flex items-center justify-center text-gray-900 font-bold">🐳</span>
+          <div>
+            <p class="font-medium text-slate-900">Especialista en Cloud</p>
+            <p>12 de febrero, 2026 • 5 min de lectura</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="prose prose-slate lg:prose-lg max-w-none">
+        <section class="mb-10">
+          <p class="text-xl text-slate-600 leading-relaxed mb-6">
+            En el desarrollo moderno, "funciona en mi máquina" ya no es suficiente. <strong>Docker</strong> revolucionó cómo empaquetamos software, pero <strong>Kubernetes</strong> es quien realmente permite que esas aplicaciones sobrevivan en producción.
+          </p>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">1. Docker: La unidad estándar de software</h2>
+          <p class="mb-4">
+            Docker permite aislar tu aplicación y sus dependencias en un contenedor ligero. A diferencia de las máquinas virtuales tradicionales (como Hyper-V), los contenedores comparten el kernel del sistema operativo, lo que los hace increíblemente rápidos.
+          </p>
+          <blockquote class="border-l-4 border-blue-500 bg-blue-50 p-6 my-8 rounded-r-lg italic text-slate-700">
+            <strong>Ventaja clave:</strong> Inmutabilidad. La misma imagen que pruebas en tu entorno local es la que se despliega en producción sin cambios.
+          </blockquote>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">2. Kubernetes: El capitán del barco (K8s)</h2>
+          <p class="mb-4">
+            Si tienes cientos de contenedores Docker, gestionarlos manualmente es imposible. Aquí entra Kubernetes, el orquestador que se encarga de:
+          </p>
+          <ul class="space-y-1 text-body list-disc list-inside mb-4">
+            <li><strong>Auto-escalado:</strong> Crear más copias de tu app si hay mucho tráfico.</li>
+            <li><strong>Auto-curación:</strong> Reiniciar contenedores si fallan inesperadamente.</li>
+            <li><strong>Zero Downtime:</strong> Actualizar versiones sin que el usuario lo note.</li>
+          </ul>
+        </section>
+
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">Conclusión</h2>
+          <p class="mb-4">
+            Docker te da la agilidad para construir, mientras que Kubernetes te da la infraestructura para escalar. Dominar ambos es el estándar de oro para cualquier desarrollador actual.
+          </p>
+        </section>
+      </div>
+
+      <footer class="mt-16 pt-8 border-t border-slate-200">
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-slate-200 px-3 py-1 rounded text-sm text-slate-700 hover:bg-slate-300 cursor-pointer">#Docker</span>
+          <span class="bg-slate-200 px-3 py-1 rounded text-sm text-slate-700 hover:bg-slate-300 cursor-pointer">#Kubernetes</span>
+          <span class="bg-slate-200 px-3 py-1 rounded text-sm text-slate-700 hover:bg-slate-300 cursor-pointer">#CloudNative</span>
+        </div>
+      </footer>
+    </article>
+  </section>
+</main>
