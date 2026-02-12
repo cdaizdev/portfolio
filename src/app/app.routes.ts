@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { Home } from './home/home';
 import { Privacy } from './privacy/privacy';
 import { Blog } from './blog/blog';
+import { BlogDocker } from './blog/blog-docker';
 import { Notfound } from './notfound/notfound';
 
 export const routes: Routes = [
