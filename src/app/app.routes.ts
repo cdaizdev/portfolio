@@ -8,5 +8,6 @@ export const routes: Routes = [
     { path: '', component: Home },
     { path: 'privacy', component: Privacy },
     { path: 'blog/use_hyperv_in_environment', component: Blog },
+    { path: 'blog/docker_development', component: BlogDocker },
     { path: '**', component: Notfound }
 ];
