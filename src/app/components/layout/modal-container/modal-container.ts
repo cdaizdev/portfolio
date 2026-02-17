@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Modal } from '../modal/modal';
-import { CookieModal } from '../cookie-modal/cookie-modal';
+import { Modal } from '../../ui/modal/modal';
+import { CookieModal } from '../../ui/cookie-modal/cookie-modal';
 
 @Component({
   selector: 'app-modal-container',

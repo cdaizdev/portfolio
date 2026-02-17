@@ -1,8 +1,8 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Header } from './header/header';
-import { Footer } from './footer/footer';
-import { ModalContainer } from './modal-container/modal-container';
+import { Header } from './components/layout/header/header';
+import { Footer } from './components/layout/footer/footer';
+import { ModalContainer } from './components/layout/modal-container/modal-container';
 
 @Component({
   selector: 'app-root',
