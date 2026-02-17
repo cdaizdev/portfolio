@@ -14,7 +14,7 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./src/styles.css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
         <div class="mx-auto max-w-7xl px-4 md:px-12 py-6 flex justify-between items-center">
           <div>
             <h1 class="text-2xl font-bold text-orange-600 dark:text-orange-400"><a routerlink="/"
-                href="/"><span>Inicio</span></a></h1>
+                href="./portfolio"><span>Inicio</span></a></h1>
             <h2 class="inline-flex gap-2"><small class="text-zinc-300 text-xs">Built with Angular</small><svg
                 xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 32 32" fill="none">
                 <path d="M16 2L3 7L5 24L16 30L27 24L29 7L16 2Z" fill="#DD0031"></path>
@@ -48,9 +48,9 @@
                 class="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 scale-x-0 origin-left transition-transform duration-300 ease-out group-hover:scale-x-100"></span></a>
           </nav>
         </div>
-        <div class="mobile-menu"><a routerlink="/"
-            class="block nav-item text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 p-2"
-            href="/">Inicio</a><a href="#about"
+        <div class="mobile-menu">
+          <a class="block nav-item text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 p-2" href="/">Inicio</a>
+          <a href="#about"
             class="block nav-item text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 p-2">
             Acerca de </a><a href="#blog"
             class="block nav-item text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 p-2">Blog</a>
@@ -60,7 +60,7 @@
     <main class="min-h-screen"><router-outlet></router-outlet><app-notfound>
         <div class="flex flex-col gap-4 justify-center items-center min-h-[80vh]">
           <h2 class="text-xl">404 - Página no encontrada</h2>
-          <p>La ruta que intentas acceder no existe.</p><a href="/" class="btn btn-primary">Volver al inicio</a>
+          <p>La ruta que intentas acceder no existe.</p><a href="./portfolio/" class="btn btn-primary">Volver al inicio</a>
         </div>
       </app-notfound><!--container--></main><app-footer>
       <footer class="bg-gray-900 text-gray-300 py-8">
