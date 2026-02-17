@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { AsideMenu } from '../aside-menu/aside-menu';
 
 @Component({
-  selector: 'app-blog',
+  selector: 'app-blog-docker',
   standalone: true, 
   imports: [CommonModule, AsideMenu],
-  templateUrl: './blog.html'
+  templateUrl: './blog-docker.html'
 })
-export class Blog {
+export class BlogDocker {
 
 }
