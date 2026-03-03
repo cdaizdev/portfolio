@@ -1,13 +1,12 @@
 import { Component, inject, ViewEncapsulation } from '@angular/core';
 import { isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { Card } from '../../components/ui/card/card';
 
 @Component({
 	selector: 'app-home',
 	standalone: true,
-	imports: [RouterLink, Card],
+	imports: [Card],
 	templateUrl: './home.html'
 })
 export class Home {
