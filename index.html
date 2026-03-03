@@ -196,7 +196,7 @@ if (!localStorage.getItem('aemet-data')) {
         .catch(error => console.log(error));
 } else {
     const datos_guimar = JSON.parse(localStorage.getItem('aemet-data'));
-    console.log(datos_guimar);
+    console.log("Los datos ya existen...", datos_guimar);
 
     const datos_interes = datos_guimar.map(item => {
         return {
