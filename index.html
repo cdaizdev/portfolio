@@ -2,297 +2,344 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Observación meteorológica</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-    <link rel="shortcut icon" href="#" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Terminal Hack</title>
+  <style>
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .cursor-blink {
+      animation: blink 1s infinite;
+    }
+
+    @keyframes scanline {
+      0% {
+        transform: translateY(-100%);
+      }
+
+      100% {
+        transform: translateY(100%);
+      }
+    }
+
+    @keyframes cursor-blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    #typing-cursor {
+      animation: cursor-blink 0.8s infinite;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    #output-log p {
+      text-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+    }
+
+    .scanline {
+      animation: scanline 8s linear infinite;
+      background: linear-gradient(to bottom, transparent, rgba(34, 197, 94, 0.1), transparent);
+    }
+  </style>
 </head>
 
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm">
-            <div class="container">
-                <a class="navbar-brand" href="#">AgroApp</a>
-                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavId">
-                    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#" aria-current="page">Home</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+<body class="bg-black text-green-500 font-mono min-h-screen p-4 md:p-10 overflow-hidden relative">
+
+  <div class="pointer-events-none fixed inset-0 z-50 scanline h-1/2 w-full"></div>
+  <div
+    class="pointer-events-none fixed inset-0 z-50 bg-[radial-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_100%),linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]">
+  </div>
+
+  <main
+    class="max-w-4xl mx-auto border border-green-900 p-6 shadow-[0_0_20px_rgba(34,197,94,0.2)] bg-black/90 relative z-10">
+
+    <header class="border-b border-green-900 pb-4 mb-6 flex justify-between items-center text-xs md:text-sm">
+      <div>
+        <p>STATUS: <span class="text-white">ENCRYPTED CONNECTION</span></p>
+        <p>IP: <span class="text-white">192.168.1.254</span></p>
+      </div>
+      <div class="text-right">
+        <p>SYSTEM: <span class="text-white">v3.0.4-kali</span></p>
+        <p class="uppercase">Access Level: <span class="text-red-500 font-bold">Root</span></p>
+      </div>
     </header>
-    <main>
-        <section class="container my-5">
-            <div class="row">
-                <div class="col">
-                    <div class="px-4 mb-4">
-                        <h1 class="fs-4">Datos meteorológicos</h1>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 mb-3">
-                            <div class="border p-3">
-                                <canvas class="w-100" style="min-height: 20rem;" id="temperatura"></canvas>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 mb-3">
-                            <div class="border p-3">
-                                <canvas class="w-100" style="min-height: 20rem;" id="humedad"></canvas>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 mb-3">
-                            <div class="border p-3">
-                                <canvas class="w-100" style="min-height: 20rem;" id="presion"></canvas>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 mb-3">
-                            <div class="border p-3">
-                                <canvas class="w-100" style="min-height: 20rem;" id="viento"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-const borderColors = Object.freeze({
-    red: 'rgba(255, 99, 132, 1)',
-    blue: 'rgba(54, 162, 235, 1)',
-    green: 'rgba(75, 192, 192, 1)',
-    yellow: 'rgba(255, 206, 86, 1)',
-    purple: 'rgba(153, 102, 255, 1)'
-});
 
-const backgroundColors = Object.freeze(
-    Object.fromEntries(Object.entries(borderColors).map(([key, value]) => [key, value.replace(' 1)', ' 0.2')]))
-);
+    <section class="space-y-4">
+      <div class="flex items-start space-x-2">
+        <span class="text-green-800">$USER_AGENT:</span>
+        <span id="navigationInfo" class="text-white"></span>
+      </div>
+      <div class="flex items-center space-x-2">
+        <span class="text-green-800">user@mainframe:~$</span>
+        <span class="text-white">run bypass_firewall.sh</span>
+      </div>
 
-class ChartManager {
-    constructor(canvasId, configs) {
-        this.canvasId = canvasId;
-        this.config = new ChartConfig(configs).getConfigs();
-        this.chart = null;
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="border border-green-900 p-3 bg-green-950/10 w-full max-w-sm">
+          <p class="text-xs text-green-700 mb-2 uppercase tracking-widest border-b border-green-900">
+            Decryption Progress
+          </p>
+
+          <div class="w-full bg-green-950 h-4 mt-2 overflow-hidden relative border border-green-900/30">
+            <div id="bar-fill"
+              class="bg-green-500 h-full w-[0%] transition-all duration-300 ease-out shadow-[0_0_15px_#22c55e]"></div>
+          </div>
+
+          <div class="flex justify-between items-end mt-2">
+            <p id="hash-output" class="text-[9px] text-green-800 font-mono truncate w-32 tracking-tighter">
+              0x000000000000
+            </p>
+            <p id="bar-text" class="text-[10px] text-green-500 italic">0% COMPLETE...</p>
+          </div>
+        </div>
+        <div class="border border-green-900 p-3 bg-green-950/10 overflow-y-hidden h-[15vh]">
+          <p class="text-xs text-green-700 mb-2 uppercase tracking-widest border-b border-green-900">Active Nodes</p>
+          <ul id="node-container" class="text-[10px] space-y-1">
+          </ul>
+        </div>
+        <div class="hidden border border-green-900 p-3 bg-green-950/10">
+          <p class="text-xs text-green-700 mb-2 uppercase tracking-widest border-b border-green-900">Active Nodes</p>
+          <ul class="text-[10px] space-y-1">
+            <li class="flex justify-between"><span>NODE_01:</span> <span class="text-white">ONLINE</span></li>
+            <li class="flex justify-between"><span>NODE_02:</span> <span class="text-white italic">SEARCHING...</span>
+            </li>
+            <li class="flex justify-between text-red-500"><span>NODE_03:</span> <span>REJECTED</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <p class="text-green-400 leading-relaxed text-sm">
+          > ANALYZING PACKETS... <br>
+          > HANDSHAKE ESTABLISHED WITH REMOTE SERVER <br>
+          > BYPASSING KERNEL RESTRICTIONS... <br>
+          > <span class="bg-green-500 text-black px-1 font-bold">ACCESS GRANTED</span>
+        </p>
+      </div>
+    </section>
+    <section id="hacker-terminal"
+      class="relative bg-black border-2 border-green-900 p-4 font-mono text-green-500 shadow-[0_0_15px_rgba(34,197,94,0.3)] overflow-hidden max-w-2xl mx-auto my-10">
+
+      <div
+        class="pointer-events-none absolute inset-0 z-20 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.03),rgba(0,255,0,0.01),rgba(0,0,255,0.03))] bg-[length:100%_3px,3px_100%]">
+      </div>
+
+      <div
+        class="flex justify-between items-center border-b border-green-900 mb-4 pb-2 text-xs uppercase tracking-tighter opacity-70">
+        <span>Terminal: /dev/tty0</span>
+        <span class="animate-pulse">● System Active</span>
+      </div>
+
+      <div id="output-log" class="h-64 overflow-y-auto space-y-1 text-sm scrollbar-hide">
+        <p class="text-white brightness-125">> INITIALIZING ENCRYPTION BYPASS...</p>
+      </div>
+
+      <div class="mt-4 pt-2 border-t border-green-900 flex items-center">
+        <span class="mr-2 opacity-50">root@kernel:~$</span>
+        <span id="typing-cursor" class="w-2 h-4 bg-green-500 inline-block shadow-[0_0_5px_#22c55e]"></span>
+      </div>
+    </section>
+
+    <footer class="mt-10 pt-4 border-t border-green-900">
+      <div class="flex">
+        <span class="mr-2">admin_root_#</span>
+        <span class="text-white">_</span>
+        <span class="w-3 h-5 bg-green-500 cursor-blink ml-1"></span>
+      </div>
+    </footer>
+  </main>
+  <div id="data-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+    <div
+      class="border border-green-900 bg-black p-6 max-w-sm w-full mx-4 shadow-[0_0_20px_rgba(21,128,61,0.2)] text-center">
+      <h2 class="text-green-500 font-mono text-lg mb-4 tracking-tighter animate-pulse">
+        > SISTEMA LISTO < </h2>
+          <p class="text-green-700 font-mono text-xs mb-6 uppercase">
+            Pulse continuar para transferir datos
+          </p>
+
+          <button onclick="closeModal()"
+            class="border border-red-900 px-6 py-2 text-red-500 font-mono text-xs hover:bg-red-900 hover:text-white transition-all duration-300 uppercase tracking-widest">
+            Continuar
+          </button>
+    </div>
+  </div>
+  <script>
+    const logContainer = document.getElementById('output-log');
+    const commands = [
+      "Searching for vulnerabilities...",
+      "Exploit found in port 8080",
+      "Injecting buffer overflow...",
+      "Accessing kernel memory...",
+      "SUCCESS: Root privileges obtained",
+      "Downloading data packet: 1024kb/s",
+      "Cleaning system logs...",
+      "Connection established via proxy-01"
+    ];
+
+    /**
+     * Añade una nueva línea al terminal con un delay
+     */
+    async function addTerminalLine(text) {
+      const line = document.createElement('p');
+      line.className = "opacity-0 transition-opacity duration-300"; // Aparece con fade
+      line.innerHTML = `<span class="text-green-800">>></span> ${text}`;
+
+      logContainer.appendChild(line);
+
+      // Forzamos reflow para la transición
+      setTimeout(() => line.classList.remove('opacity-0'), 10);
+
+      // Auto-scroll al final
+      logContainer.scrollTop = logContainer.scrollHeight;
     }
 
-    initialize() {
-        const ctx = document.getElementById(this.canvasId).getContext('2d');
-        this.chart = new Chart(ctx, this.config);
+    /**
+     * Ciclo infinito de "hackeo"
+     */
+    async function startHack() {
+      let i = 0;
+      while (true) {
+        await addTerminalLine(commands[i % commands.length]);
+        i++;
+        const delay = Math.floor(Math.random() * 1500) + 500;
+        await new Promise(resolve => setTimeout(resolve, delay));
+      }
     }
 
-    updateData(newData, newLabels) {
-        if (this.chart) {
-            this.chart.data.datasets[0].data = newData;
-            this.chart.data.labels = newLabels;
-            this.chart.update();
+    startHack();
+  </script>
+  <script>
+    // Configuración de elementos
+    const barFill = document.getElementById('bar-fill');
+    const barText = document.getElementById('bar-text');
+    const hashOutput = document.getElementById('hash-output');
+
+    let progress = 0;
+    const chars = "ABCDEF0123456789";
+
+    /**
+     * Genera un string aleatorio tipo Hash
+     */
+    function updateHash() {
+      let result = "0x";
+      for (let i = 0; i < 20; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      hashOutput.innerText = result;
+    }
+
+    /**
+     * Controla el ciclo de la barra de 0 a 100
+     */
+    function updateProgress() {
+      progress += 1;
+
+      if (progress > 100) {
+        progress = 0;
+      }
+      barFill.style.width = `${progress}%`;
+      barText.innerText = `${progress}% COMPLETE...`;
+    }
+    setInterval(updateHash, 100);
+    setInterval(updateProgress, 150);
+  </script>
+  <script>
+    const nodeContainer = document.getElementById('node-container');
+    const totalNodes = 8; // Cantidad de nodos a generar
+
+    // Función auxiliar para pausar la ejecución (ms)
+    const delay = (ms) => new Promise(res => setTimeout(res, ms));
+
+    async function startNodeSequence() {
+      nodeContainer.innerHTML = ''; // Limpiar al iniciar
+
+      for (let i = 1; i <= totalNodes; i++) {
+        const nodeId = `NODE_${i.toString().padStart(2, '0')}`;
+
+        // 1. Crear el elemento en el DOM (Estado inicial: SEARCHING)
+        const li = document.createElement('li');
+        li.className = "flex justify-between";
+        li.innerHTML = `
+      <span>${nodeId}:</span> 
+      <span id="status-${nodeId}" class="text-white italic animate-pulse">SEARCHING...</span>
+    `;
+        nodeContainer.appendChild(li);
+
+        // 2. Esperar un tiempo aleatorio de "busqueda" (ej: entre 1 y 2.5 segundos)
+        await delay(1000 + Math.random() * 1500);
+
+        // 3. Determinar resultado final
+        const statusSpan = document.getElementById(`status-${nodeId}`);
+        const isOnline = Math.random() > 0.3; // 70% de probabilidad de éxito
+
+        if (isOnline) {
+          statusSpan.textContent = "ONLINE";
+          statusSpan.className = "text-white"; // Quitar cursiva y pulso
+        } else {
+          statusSpan.textContent = "REJECTED";
+          statusSpan.className = "text-red-500";
+          li.classList.add("text-red-500");
         }
+
+        // 4. Pequeña pausa antes de que aparezca el siguiente nodo
+        await delay(500);
+      }
     }
 
-    destroy() {
-        if (this.chart) {
-            this.chart.destroy();
-        }
+    // Iniciar la secuencia al cargar la página
+    startNodeSequence();
+  </script>
+  <script>
+    navigationInfo.innerText = navigator.userAgent.split(' ').find(i => i.includes('Chrome'));
+  </script>
+  <script>
+    // ... (aquí iría tu código anterior de los nodos)
+
+    /**
+     * Lógica del Modal
+     */
+    const modal = document.getElementById('data-modal');
+
+    // Función para abrir el modal a los 10 segundos
+    setTimeout(() => {
+      modal.classList.remove('hidden');
+      // Opcional: Sonido de alerta o log en consola
+      console.log("Esperando confirmación de transferencia...");
+    }, 10000);
+
+    // Función para cerrar el modal
+    function closeModal() {
+      modal.classList.add('hidden');
+      console.log("Iniciando transferencia de datos...");
+      // Aquí podrías disparar una nueva animación o evento
     }
-}
-
-class ChartConfig {
-    constructor(configs) {
-        this.datasets = configs.datasets;
-        this.baseConfig = {
-            type: configs.type,
-            data: {
-                labels: configs.labels,
-                datasets: []
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    title: {
-                        display: true,
-                        text: configs.title
-                    },
-                    legend: {
-                        display: true,
-                        position: 'bottom'
-                    },
-                    tooltip: {
-                        enabled: true
-                    }
-                },
-                scales: {
-                    x: {
-                        title: {
-                            display: true,
-                            text: configs.xlabel
-                        }
-                    }
-                }
-            }
-        };
-        this.addDataSet(this.datasets);
-        this.datasets.forEach(item => {
-            this.addScale(item.id, item.label, item.scale ?? 'linear', item.position ?? 'left');
-        });
-    }
-    getConfigs() {
-        return this.baseConfig;
-    }
-    addDataSet() {
-        this.baseConfig.data.datasets = this.datasets.map((item) => {
-            return {
-                label: item.label,
-                data: item.data,
-                borderColor: borderColors[item.color],
-                backgroundColor: backgroundColors[item.color],
-                yAxisID: item.id,
-                tension: 0.4
-            }
-        });
-    }
-    addScale(id, label, type, position) {
-        this.baseConfig.options.scales[id] = {
-            type: type,
-            position: position,
-            grid: {
-                drawOnChartArea: false
-            },
-            title: {
-                display: true,
-                text: label
-            }
-        };
-    }
-}
-
-const apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyaWdlbGRyZWFtc0BnbWFpbC5jb20iLCJqdGkiOiI1Y2VjOGNiOC1mYjY4LTQxYmEtODcyMi03MDVkYmZmOTc4MGIiLCJpc3MiOiJBRU1FVCIsImlhdCI6MTczNTc2NjUxOSwidXNlcklkIjoiNWNlYzhjYjgtZmI2OC00MWJhLTg3MjItNzA1ZGJmZjk3ODBiIiwicm9sZSI6IiJ9.dvm0Nq-gZZoQpfVfs8AVOFuXp06_UTIIL5DOmWtyp8U';
-const urlSolicitud = `https://opendata.aemet.es/opendata/api/observacion/convencional/datos/estacion/C439J/?api_key=${apiKey}`;
-
-if (!localStorage.getItem('aemet-data')) {
-    console.log('Obteniendo nuevos datos...');
-    fetch(urlSolicitud)
-        .then(response => response.json())
-        .then(data1 => {
-            console.log(data1);
-            if (data1.estado == 200) {
-                fetch(data1.datos)
-                    .then(response => response.json())
-                    .then(data2 => {
-                        console.log('Datos obtenidos', data2);
-                        localStorage.setItem('aemet-data', JSON.stringify(data2));
-                    })
-                    .catch(error => console.log(error));
-            }
-        })
-        .catch(error => console.log(error));
-} else {
-    const datos_guimar = JSON.parse(localStorage.getItem('aemet-data'));
-    console.log("Los datos ya existen...", datos_guimar);
-
-    const datos_interes = datos_guimar.map(item => {
-        return {
-            fecha: item.fint.split('T')[0],
-            hora: item.fint.split('T')[1].split('+')[0].replace('00:00', '00'),
-            temperatura_ambiente: item.ta,
-            humedad_relativa: item.hr,
-            temperatura_rocio: item.tpr,
-            presion: item.pres,
-            viento: item.vv
-        }
-    });
-
-    console.log(datos_interes);
-
-    const configs = {
-        type: 'line',
-        title: "Temperatura ambiente y punto de rocío en Güímar el " + datos_interes[0].fecha,
-        xlabel: 'Hora',
-        labels: datos_interes.map(item => item.hora),
-        datasets: [
-            {
-                id: 'y0',
-                label: 'Punto de rocío (ºC)',
-                color: 'blue',
-                data: datos_interes.map(item => item.temperatura_rocio)
-            },
-            {
-                id: 'y0',
-                label: 'Temperatura (ºC)',
-                color: 'red',
-                data: datos_interes.map(item => item.temperatura_ambiente)
-            }
-        ]
-    };
-
-    const configs_humedad = {
-        type: 'line',
-        title: "Humedad relativa en Güímar el " + datos_interes[0].fecha,
-        xlabel: 'Hora',
-        labels: datos_interes.map(item => item.hora),
-        datasets: [
-            {
-                id: 'y',
-                label: 'Humedad relativa (%)',
-                position: 'right',
-                color: 'green',
-                data: datos_interes.map(item => item.humedad_relativa)
-            }
-        ]
-    };
-
-    const configs_presion = {
-        type: 'line',
-        title: "Presión en Güímar el " + datos_interes[0].fecha,
-        xlabel: 'Hora',
-        labels: datos_interes.map(item => item.hora),
-        datasets: [
-            {
-                id: 'y',
-                label: 'Presion (HPa)',
-                position: 'right',
-                color: 'yellow',
-                data: datos_interes.map(item => item.presion)
-            }
-        ]
-    };
-    const configs_viento = {
-        type: 'line',
-        title: "Viento en Güímar el " + datos_interes[0].fecha,
-        xlabel: 'Hora',
-        labels: datos_interes.map(item => item.hora),
-        datasets: [
-            {
-                id: 'y',
-                label: 'Viento (m/s)',
-                position: 'right',
-                color: 'purple',
-                data: datos_interes.map(item => item.viento)
-            }
-        ]
-    };
-
-    const chartManager = new ChartManager('temperatura', configs);
-    chartManager.initialize();
-
-    const chartHumedad = new ChartManager('humedad', configs_humedad);
-    chartHumedad.initialize();
-
-    const chart_presion = new ChartManager('presion', configs_presion);
-    chart_presion.initialize();
-
-    const chart_viento = new ChartManager('viento', configs_viento);
-    chart_viento.initialize();
-}
-</script>
+  </script>
 </body>
 
 </html>
