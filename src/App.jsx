@@ -7,7 +7,7 @@ import PreLogin from './pages/PreLogin';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio">
       <Navbar />
       <div className="min-h-screen bg-slate-900 text-slate-100">
         <Routes>
