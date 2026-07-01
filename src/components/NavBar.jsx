@@ -9,7 +9,7 @@ export default function Navbar() {
                     <div className="h-8 w-8 bg-emerald-500 rounded-lg flex items-center justify-center font-bold text-white shadow-lg shadow-emerald-500/30">
                         S
                     </div>
-                    <Link to="/portfolio" className="text-xl font-bold tracking-tight bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
+                    <Link to="/" className="text-xl font-bold tracking-tight bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
                         SecureAuth
                     </Link>
                 </div>
