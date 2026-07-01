@@ -11,8 +11,8 @@ export default function App() {
       <Navbar />
       <div className="min-h-screen bg-slate-900 text-slate-100">
         <Routes>
-          <Route path="/portfolio" element={<Home />} />
-          <Route path="/portfolio/prelogin" element={<PreLogin />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/prelogin" element={<PreLogin />} />
         </Routes>
       </div>
     </BrowserRouter>
