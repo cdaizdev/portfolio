@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@variant dark (&:where(.dark, .dark *));
 @layer base {
   :root {
     color-scheme: light;
@@ -19,7 +19,7 @@
   }
 
   .btn-secondary {
-    @apply px-6 py-3 bg-slate-800 hover:bg-slate-700 font-medium rounded-lg border border-slate-700 transition text-center;
+    @apply px-6 py-3 bg-slate-800 hover:bg-slate-700 font-medium rounded-lg border border-slate-700 transition text-white text-center;
   }
 
 }
