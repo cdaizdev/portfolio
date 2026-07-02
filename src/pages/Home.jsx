@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import PreLogin from './PreLogin';
+import PreLogin from './PreLogin.jsx';
 
 function Home() {
 	const cards = [
