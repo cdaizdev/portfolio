@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { Sun, Moon } from "lucide-react"; // Si usas la librería de iconos
+import { Sun, Moon } from "lucide-react";
 
 function DarkModeToggle() {
   const [darkMode, setDarkMode] = useState(false);
 
-  // Cada vez que cambie el estado, añadimos o quitamos la clase 'dark'
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
