@@ -8,7 +8,7 @@ import NotFound from './pages/NotFound';
 
 export default function App() {
   return (
-    <BrowserRouter basename="/portfolio">
+    <BrowserRouter>
       <Navbar />
       <div className="min-h-screen bg-slate-900 text-slate-100">
         <Routes>
