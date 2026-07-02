@@ -10,7 +10,7 @@ export default function Navbar() {
                         S
                     </div>
                     <Link to="/" className="text-xl font-bold tracking-tight bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
-                        SecureAuth
+                        SecuredAuth
                     </Link>
                 </div>
                 <nav className="hidden md:flex space-x-8 text-sm font-medium text-slate-400">

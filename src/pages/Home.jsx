@@ -52,7 +52,7 @@ function Home() {
 							<h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
 								Autenticación Robusta con{' '}
 								<span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
-									SecureAuth
+									SecuredAuth
 								</span>
 							</h1>
 							<p className="mt-4 text-base text-slate-400 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
