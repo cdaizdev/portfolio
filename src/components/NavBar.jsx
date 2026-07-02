@@ -14,11 +14,11 @@ export default function Navbar() {
                     </Link>
                 </div>
                 <nav className="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
-                    <Link to="/" className="hidden hover:text-white transition">Inicio</Link>
+                    <Link to="/" className="hidden hover:text-white transition">Home</Link>
                 </nav>
                 <div>
                     <Link to="/prelogin" className="btn-primary">
-                        Acceder
+                        Access
                     </Link>
                 </div>
             </div>

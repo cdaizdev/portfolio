@@ -1,28 +1,29 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import PreLogin from './PreLogin.jsx';
+import { ExternalLink, Globe, LockKeyhole, KeyRound } from 'lucide-react';
+import PreLogin from './PreLogin';
 
 function Home() {
 	const cards = [
 		{
-			title: "Seguridad por diseño",
-			desc: "Implementación del patrón BFF (Backend For Frontend). Los tokens JWT se gestionan de forma segura en el Gateway, protegiendo al cliente de ataques XSS mediante cookies HTTP-Only."
+			title: "Security By Design",
+			desc: "Pattern BFF (Backend For Frontend) Implementation. JWT tokens are managed safely in a SpringBoot Gateway, protecting clients against XSS attacks with HTTP-ONLY cookies."
 		},
 		{
-			title: "Separación de funciones",
-			desc: "Desacoplamiento total entre capas. El Frontend solo se preocupa de la interfaz, el Gateway del enrutamiento y la seguridad, y los microservicios de la lógica de negocio pura."
+			title: "Separation of Concerns",
+			desc: "Complete decoupling between layers. The Frontend focuses solely on the user interface, the Gateway handles routing and security, and microservices manage pure business logic."
 		},
 		{
-			title: "Evaluación de amenazas",
-			desc: "Centralización del control de accesos mediante Keycloak (OAuth2/OIDC). Mitigación proactiva de riesgos de suplantación de identidad y fuga de credenciales en el cliente."
+			title: "Threat Assessment",
+			desc: "Centralized access control powered by Keycloak (OAuth2/OIDC). Proactive risk mitigation against identity theft and client-side credential leaks."
 		},
 		{
-			title: "Capacidad de monitoreo",
-			desc: "Arquitectura preparada para la trazabilidad. Al centralizar las peticiones en el Spring Cloud Gateway, es posible auditar flujos de tráfico y tiempos de respuesta de las APIs."
+			title: "Observability and Monitoring Capabilities",
+			desc: "Architecture built for traceability. Centralizing requests through Spring Cloud Gateway enables auditing traffic flows and API response times."
 		},
 		{
-			title: "Modularidad y control de versiones",
-			desc: "Estructura limpia e independiente. Cada API REST funciona como un módulo autónomo, facilitando el escalado, mantenimiento y despliegue continuo sin afectar al ecosistema."
+			title: "Modularity and Version Control",
+			desc: "Clean and independent structure. Each REST API operates as a self-contained module, enabling seamless scaling, maintenance, and continuous deployment without impacting the ecosystem."
 		}
 	];
 
@@ -47,44 +48,37 @@ function Home() {
 						{/* SECCIÓN 1: EL TEXTO (Añade flex-1 y w-full) */}
 						<div className="w-full lg:flex-1 text-center lg:text-left">
 							<span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-4">
-								Patrón BFF & Arquitectura Segura
+								BFF Pattern & Secure Architecture
 							</span>
 							<h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
-								Autenticación Robusta con{' '}
+								Robust Authentication with <br />
 								<span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
 									SecuredAuth
 								</span>
 							</h1>
 							<p className="mt-4 text-base text-slate-400 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-								Una arquitectura de microservicios protegida por Keycloak y Spring Cloud Gateway.
-								Sesiones blindadas mediante cookies criptográficas HTTP-Only para mitigar ataques XSS.
+								A microservice architecture protected by Keycloak and Spring Cloud. Encrypted HTTP-Only cookies and hardened sessions to prevent XSS attacks.
 							</p>
 							<div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-								<button className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 font-medium rounded-lg shadow-lg shadow-emerald-600/20 transition text-center">
-									Explorar Dashboard
-								</button>
-								<button className="px-6 py-3 bg-slate-800 hover:bg-slate-700 font-medium rounded-lg border border-slate-700 transition text-center">
-									Ver en GitHub
-								</button>
+								<Link to="demo" className="btn-primary p-4">
+									Explore Dashboard
+								</Link>
+								<a href="https://github.com/cdaizdev/Microservices.git" target="_blank" rel="noreferrer" className="flex gap-4 btn-secondary">
+									View on GitHub <ExternalLink className='sm' />
+								</a>
 							</div>
 						</div>
 
 						{/* SECCIÓN 2: EL CARRUSEL DE CARDS (Añade flex-1 y w-full) */}
 						<div className="w-full lg:flex-1 relative flex flex-col items-center">
-
-							{/* Efecto de brillo de fondo */}
 							<div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 to-cyan-500/10 rounded-2xl blur-2xl opacity-50"></div>
-
-							{/* Ventana del carrusel */}
 							<div className="relative w-full max-w-xl overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/60 p-1 shadow-2xl backdrop-blur-sm">
-
-								{/* Tira horizontal que se desplaza */}
 								<div className="flex transition-transform duration-700 ease-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
 									{cards.map((card, index) => (
 										<div key={index} className="w-full flex-shrink-0 p-8 flex flex-col justify-center min-h-[240px] sm:min-h-[280px]">
 											<div className="flex items-center justify-between mb-4">
 												<span className="text-xs font-mono tracking-widest text-emerald-400 uppercase">
-													Principio 0{index + 1}
+													Principle 0{index + 1}
 												</span>
 												<div className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse"></div>
 											</div>
@@ -97,8 +91,6 @@ function Home() {
 										</div>
 									))}
 								</div>
-
-								{/* Indicadores inferiores (Dots) */}
 								<div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
 									{cards.map((_, index) => (
 										<button key={index} onClick={() => setCurrentIndex(index)}
@@ -109,7 +101,6 @@ function Home() {
 
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</section>
@@ -119,44 +110,43 @@ function Home() {
 				<article className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="text-center max-w-3xl mx-auto mb-16">
 						<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-							Seguridad de nivel corporativo
+							Corporate-level security
 						</h2>
 						<p className="mt-4 text-lg text-slate-400">
-							Diseñado siguiendo las mejores prácticas de OWASP para el manejo de sesiones en el frontend.
-						</p>
+							Designed following OWASP best practices for frontend session management.						</p>
 					</div>
 
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 						{/* Tarjeta 1 */}
 						<div className="bg-slate-900 p-6 rounded-xl border border-slate-800/80 hover:border-slate-700 transition">
-							<div className="h-10 w-10 bg-emerald-500/10 text-emerald-400 rounded-lg flex items-center justify-center font-bold mb-4">
-								🔒
+							<div className="h-10 w-10 bg-emerald-500/10 text-red-400 rounded-lg flex items-center justify-center font-bold mb-4">
+								<LockKeyhole strokeWidth={1} />
 							</div>
 							<h3 className="text-lg font-semibold text-white mb-2">Cookies HTTP-Only</h3>
 							<p className="text-sm text-slate-400 leading-relaxed">
-								Los tokens nunca tocan el LocalStorage. El navegador los maneja de forma invisible y segura mediante cookies protegidas.
+								The tokens never touch LocalStorage. The browser handles them invisibly and securely using protected cookies.
 							</p>
 						</div>
 
 						{/* Tarjeta 2 */}
 						<div className="bg-slate-900 p-6 rounded-xl border border-slate-800/80 hover:border-slate-700 transition">
-							<div className="h-10 w-10 bg-emerald-500/10 text-emerald-400 rounded-lg flex items-center justify-center font-bold mb-4">
-								🌐
+							<div className="h-10 w-10 bg-emerald-500/10 text-blue-400 rounded-lg flex items-center justify-center font-bold mb-4">
+								<Globe strokeWidth={1} />
 							</div>
 							<h3 className="text-lg font-semibold text-white mb-2">Spring Cloud Gateway</h3>
 							<p className="text-sm text-slate-400 leading-relaxed">
-								Actúa como punto único de entrada, gestionando el enrutamiento inteligente hacia las APIs y la inyección segura de tokens.
+								It acts as a single point of entry, managing intelligent routing to APIs and secure token injection.
 							</p>
 						</div>
 
 						{/* Tarjeta 3 */}
 						<div className="bg-slate-900 p-6 rounded-xl border border-slate-800/80 hover:border-slate-700 transition">
-							<div className="h-10 w-10 bg-emerald-500/10 text-emerald-400 rounded-lg flex items-center justify-center font-bold mb-4">
-								🔑
+							<div className="h-10 w-10 bg-emerald-500/10 text-amber-400 rounded-lg flex items-center justify-center font-bold mb-4">
+								<KeyRound strokeWidth={1} />
 							</div>
 							<h3 className="text-lg font-semibold text-white mb-2">Keycloak IAM</h3>
 							<p className="text-sm text-slate-400 leading-relaxed">
-								Gestión de identidad federada, control de acceso basado en roles (RBAC) y flujos OpenID Connect estándares.
+								Federated identity management, role-based access control (RBAC), and standard OpenID Connect flows.
 							</p>
 						</div>
 					</div>
