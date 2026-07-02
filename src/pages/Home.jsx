@@ -63,7 +63,7 @@ function Home() {
 								<Link to="demo" className="btn-primary p-4">
 									Explore Dashboard
 								</Link>
-								<a href="https://github.com/cdaizdev/Microservices.git" target="_blank" rel="noreferrer" className="flex gap-4 btn-secondary">
+								<a href="https://github.com/cdaizdev/Microservices.git" target="_blank" rel="noreferrer" className="flex justify-center gap-4 btn-secondary">
 									View on GitHub <ExternalLink className='sm' />
 								</a>
 							</div>

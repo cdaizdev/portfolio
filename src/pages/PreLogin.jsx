@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const PreLogin = ({ onLoginClick }) => {
     const [loading, setLoading] = useState(true);
-
+    const serviceAvailable = useState(false);
     const handleLogin = () => {
         setLoading(true);
         onLoginClick();
@@ -22,8 +22,6 @@ const PreLogin = ({ onLoginClick }) => {
                         <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
                             To ensure secure access, we use federated authentication services. Please log in to continue.
                         </p>
-
-                        {/* Caja de advertencia sobre Render con soporte Dark Mode */}
                         <div className="bg-amber-50 dark:bg-amber-950/40 p-4 rounded-r-lg mb-8 flex items-start text-left">
                             <div>
                                 <p className="text-amber-900 dark:text-amber-400 text-sm font-semibold mb-1">Notice:</p>
@@ -36,10 +34,11 @@ const PreLogin = ({ onLoginClick }) => {
                                 </p>
                             </div>
                         </div>
-
-                        <button className="btn-primary w-full p-4" onClick={handleLogin}>
-                            Request access
-                        </button>
+                        {!serviceAvailable ? 
+                            (<><button className="btn-primary w-full p-4" onClick={handleLogin}>Request access</button></>) :
+                            (<><button className="btn-warning w-full p-4">Service not available</button></>)
+                        }
+                        
                     </>
                 ) : (
                     /* Estado de Carga (Spinner) con soporte Dark Mode */
